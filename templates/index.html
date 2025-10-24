@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title> Generador de Audios de Vibración</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+  <div class="app-container">
+    <h1> Generador de Audios de Vibración</h1>
+    <p>Sube tu archivo CSV y descarga los audios generados.</p>
+
+    <form id="formulario" enctype="multipart/form-data">
+      <label class="upload-btn">
+        📂 Seleccionar archivo CSV
+        <input type="file" name="file" accept=".csv" required hidden>
+      </label>
+      <button type="submit" class="convert-btn">🚀 Convertir a Audio</button>
+    </form>
+
+    <div id="progreso" class="progreso oculto">
+      <div class="barra"></div>
+      <p>Procesando...</p>
+    </div>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
